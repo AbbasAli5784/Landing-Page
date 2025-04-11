@@ -61,11 +61,16 @@ const HeroSection = () => {
           href="https://www.laserspot.ca/booking-calendar/free-consultation?referral=service_list_widget"
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() =>
+          onClick={(e) => {
+            e.preventDefault();
             gtag_report_conversion(
               "https://www.laserspot.ca/booking-calendar/free-consultation?referral=service_list_widget"
-            )
-          }
+            );
+            setTimeout(() => {
+              window.location.href =
+                "https://www.laserspot.ca/booking-calendar/free-consultation?referral=service_list_widget";
+            }, 300); // give tag time to fire
+          }}
           className="bg-pink-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-pink-700 transition drop-shadow-lg"
         >
           Book Now
@@ -173,18 +178,29 @@ const Testimonials = () => (
           href="https://www.laserspot.ca/booking-calendar/free-consultation?referral=service_list_widget"
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() =>
+          onClick={(e) => {
+            e.preventDefault();
             gtag_report_conversion(
               "https://www.laserspot.ca/booking-calendar/free-consultation?referral=service_list_widget"
-            )
-          }
+            );
+            setTimeout(() => {
+              window.location.href =
+                "https://www.laserspot.ca/booking-calendar/free-consultation?referral=service_list_widget";
+            }, 300); // give tag time to fire
+          }}
           className="bg-pink-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-pink-700 transition drop-shadow-lg"
         >
           Book Online
         </a>
         <a
           href="tel:+14168431396"
-          onClick={() => gtag_report_conversion("tel:+14168431396")}
+          onClick={(e) => {
+            e.preventDefault();
+            gtag_report_conversion("tel:+14168431396");
+            setTimeout(() => {
+              window.location.href = "tel:+14168431396";
+            }, 300);
+          }}
           className="bg-white border border-pink-600 text-pink-600 font-semibold px-6 py-3 rounded-full hover:bg-pink-50 transition shadow-md"
         >
           Call Now

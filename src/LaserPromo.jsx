@@ -2,7 +2,7 @@ import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import Face from "./img/face.jpg";
+import Face from "./img/face.jpg"; // Hero background image
 
 const FadeSection = ({ children }) => {
   const controls = useAnimation();
@@ -44,11 +44,10 @@ const HeroSection = () => {
     >
       <div
         className="absolute inset-0 bg-cover bg-center opacity-20 -z-10"
-        style={{
-          backgroundImage: `url(${Face})`,
-        }}
+        style={{ backgroundImage: `url(${Face})` }}
       />
       <div className="absolute inset-0 bg-pink-100 bg-opacity-60 -z-10" />
+
       <div className="z-10 animate-fade-in">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 drop-shadow-lg">
           🌟 Face Laser Hair Removal – Only $79.99 🌟
@@ -69,25 +68,12 @@ const HeroSection = () => {
             setTimeout(() => {
               window.location.href =
                 "https://www.laserspot.ca/booking-calendar/free-consultation?referral=service_list_widget";
-            }, 300); // give tag time to fire
+            }, 300);
           }}
           className="bg-pink-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-pink-700 transition drop-shadow-lg"
         >
           Book Now
         </a>
-
-        <button
-          onClick={() => {
-            gtag("event", "conversion", {
-              send_to: "AW-16976821320/DqeRCMfa_bYaEMj4lp8_",
-              value: 1.0,
-              currency: "CAD",
-            });
-          }}
-          className="bg-blue-600 text-white px-4 py-2 rounded mt-6"
-        >
-          Test Conversion (No Redirect)
-        </button>
       </div>
     </motion.section>
   );
@@ -140,48 +126,32 @@ const Testimonials = () => (
       </h2>
       <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <div className="bg-white shadow-md rounded-2xl p-6 text-left">
-          <div className="mb-2">
-            <h4 className="text-lg font-semibold text-gray-900">Elena S.</h4>
-            <div className="text-yellow-500 text-sm">★★★★★</div>
-          </div>
+          <h4 className="text-lg font-semibold text-gray-900">Elena S.</h4>
+          <div className="text-yellow-500 text-sm mb-2">★★★★★</div>
           <p className="text-gray-700 italic">
-            This is the second time I have gotten laser hair removal. The first
-            time it was super painful and I was seeing very little results after
-            six sessions (at a different clinic). After my first session with
-            Shela there was a noticeable improvement and the treatment was
-            painless. Shela is so great and I couldn't be happier with my
-            results so far!
+            After my first session with Shela there was a noticeable improvement
+            and the treatment was painless.
           </p>
         </div>
-
         <div className="bg-white shadow-md rounded-2xl p-6 text-left">
-          <div className="mb-2">
-            <h4 className="text-lg font-semibold text-gray-900">Chioma O.</h4>
-            <div className="text-yellow-500 text-sm">★★★★★</div>
-          </div>
+          <h4 className="text-lg font-semibold text-gray-900">Chioma O.</h4>
+          <div className="text-yellow-500 text-sm mb-2">★★★★★</div>
           <p className="text-gray-700 italic">
-            I have gone to different places for my laser treatment, all it took
-            was 2 sessions and my facial hair thinned out and inflammations went
-            down completely. Best place ever not everyone knows how to treat
-            black skin but this place got it right immediately
+            All it took was 2 sessions and my facial hair thinned out
+            completely. Best place ever!
           </p>
         </div>
-
         <div className="bg-white shadow-md rounded-2xl p-6 text-left">
-          <div className="mb-2">
-            <h4 className="text-lg font-semibold text-gray-900">Simran S.</h4>
-            <div className="text-yellow-500 text-sm">★★★★★</div>
-          </div>
+          <h4 className="text-lg font-semibold text-gray-900">Simran S.</h4>
+          <div className="text-yellow-500 text-sm mb-2">★★★★★</div>
           <p className="text-gray-700 italic">
-            Laser Spot Brampton is the best! I did laser hair removal on my
-            face, and after five sessions my hair has barely grown back! Would
-            definitely recommend 😊
+            Laser Spot Brampton is the best! After five sessions my hair has
+            barely grown back!
           </p>
         </div>
       </div>
     </section>
 
-    {/* Call-to-action section with tracking */}
     <section className="bg-pink-50 py-12 px-4 text-center">
       <h3 className="text-2xl font-bold text-gray-800 mb-4">
         Ready to Experience the Laser Spot Difference?
@@ -199,9 +169,9 @@ const Testimonials = () => (
             setTimeout(() => {
               window.location.href =
                 "https://www.laserspot.ca/booking-calendar/free-consultation?referral=service_list_widget";
-            }, 300); // give tag time to fire
+            }, 300);
           }}
-          className="bg-pink-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-pink-700 transition drop-shadow-lg"
+          className="bg-pink-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-pink-700 transition shadow-md"
         >
           Book Online
         </a>
@@ -229,8 +199,8 @@ const ServiceExplanation = () => (
       <h2 className="text-3xl font-bold text-gray-800 mb-6">What to Expect</h2>
       <p className="max-w-2xl mx-auto text-gray-600 text-lg">
         Our face laser hair removal treatment is quick, gentle, and customized
-        for your skin type. You’ll see smoother skin in just a few sessions,
-        with no downtime. Perfect for upper lip, chin, and jawline areas.
+        for your skin type. You'll see smoother skin in just a few sessions,
+        with no downtime.
       </p>
     </section>
   </FadeSection>

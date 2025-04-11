@@ -12,7 +12,6 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-L4EEH7KFD8");
     </script>
     <meta charset="UTF-8" />
@@ -22,13 +21,15 @@
   <body>
     <div id="root"></div>
 
+    <!-- Google Ads Conversion Tracking -->
     <script>
       function gtag_report_conversion(url) {
-        var callback = function () {
+        const callback = function () {
           if (typeof url !== "undefined") {
             window.location = url;
           }
         };
+
         if (url.includes("booking-calendar")) {
           gtag("event", "conversion", {
             send_to: "AW-16976821320/DqeRCMfa_bYaEMj4lp8_",

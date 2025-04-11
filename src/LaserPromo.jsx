@@ -118,7 +118,6 @@ const Testimonials = () => (
         What Our Clients Say
       </h2>
       <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {/* Review 1 */}
         <div className="bg-white shadow-md rounded-2xl p-6 text-left">
           <div className="mb-2">
             <h4 className="text-lg font-semibold text-gray-900">Elena S.</h4>
@@ -134,7 +133,6 @@ const Testimonials = () => (
           </p>
         </div>
 
-        {/* Review 2 */}
         <div className="bg-white shadow-md rounded-2xl p-6 text-left">
           <div className="mb-2">
             <h4 className="text-lg font-semibold text-gray-900">Chioma O.</h4>
@@ -148,7 +146,6 @@ const Testimonials = () => (
           </p>
         </div>
 
-        {/* Review 3 */}
         <div className="bg-white shadow-md rounded-2xl p-6 text-left">
           <div className="mb-2">
             <h4 className="text-lg font-semibold text-gray-900">Simran S.</h4>
@@ -177,7 +174,7 @@ const Testimonials = () => (
           Book Online
         </a>
         <a
-          href="tel:+4168431396"
+          href="tel:+14168431396"
           className="bg-white border border-pink-600 text-pink-600 font-semibold px-6 py-3 rounded-full hover:bg-pink-50 transition shadow-md"
         >
           Call Now

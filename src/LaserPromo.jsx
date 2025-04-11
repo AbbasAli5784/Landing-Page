@@ -75,6 +75,19 @@ const HeroSection = () => {
         >
           Book Now
         </a>
+
+        <button
+          onClick={() => {
+            gtag("event", "conversion", {
+              send_to: "AW-16976821320/DqeRCMfa_bYaEMj4lp8_",
+              value: 1.0,
+              currency: "CAD",
+            });
+          }}
+          className="bg-blue-600 text-white px-4 py-2 rounded mt-6"
+        >
+          Test Conversion (No Redirect)
+        </button>
       </div>
     </motion.section>
   );

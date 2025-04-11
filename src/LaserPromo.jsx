@@ -1,9 +1,8 @@
 import React from "react";
-
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import Face from "./img/face.jpg"; //
+import Face from "./img/face.jpg";
 
 const FadeSection = ({ children }) => {
   const controls = useAnimation();
@@ -49,7 +48,6 @@ const HeroSection = () => {
           backgroundImage: `url(${Face})`,
         }}
       />
-
       <div className="absolute inset-0 bg-pink-100 bg-opacity-60 -z-10" />
       <div className="z-10 animate-fade-in">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 drop-shadow-lg">
@@ -160,6 +158,7 @@ const Testimonials = () => (
       </div>
     </section>
 
+    {/* Call-to-action section with tracking */}
     <section className="bg-pink-50 py-12 px-4 text-center">
       <h3 className="text-2xl font-bold text-gray-800 mb-4">
         Ready to Experience the Laser Spot Difference?
@@ -170,12 +169,22 @@ const Testimonials = () => (
           target="_blank"
           rel="noopener noreferrer"
           className="bg-pink-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-pink-700 transition shadow-md"
+          onClick={() =>
+            window.gtag_report_conversion &&
+            window.gtag_report_conversion(
+              "https://www.laserspot.ca/booking-calendar/free-consultation?referral=service_list_widget"
+            )
+          }
         >
           Book Online
         </a>
         <a
           href="tel:+14168431396"
           className="bg-white border border-pink-600 text-pink-600 font-semibold px-6 py-3 rounded-full hover:bg-pink-50 transition shadow-md"
+          onClick={() =>
+            window.gtag_report_conversion &&
+            window.gtag_report_conversion("tel:+14168431396")
+          }
         >
           Call Now
         </a>

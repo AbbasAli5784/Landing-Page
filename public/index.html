@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Global site tag (gtag.js) - Google Ads & GA4 -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-L4EEH7KFD8"
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16976821320"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -12,16 +12,21 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "G-L4EEH7KFD8");
+
+      // Initialize both GA4 and Google Ads
+      gtag("config", "G-L4EEH7KFD8"); // GA4
+      gtag("config", "AW-16976821320"); // Google Ads
     </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laser Promo</title>
   </head>
+
   <body>
     <div id="root"></div>
 
-    <!-- Google Ads Conversion Tracking -->
+    <!-- Google Ads Conversion Tracking Handler -->
     <script>
       function gtag_report_conversion(url) {
         const callback = function () {
@@ -30,6 +35,7 @@
           }
         };
 
+        // Book Now Conversion
         if (url.includes("booking-calendar")) {
           gtag("event", "conversion", {
             send_to: "AW-16976821320/DqeRCMfa_bYaEMj4lp8_",
@@ -37,6 +43,8 @@
             currency: "CAD",
             event_callback: callback,
           });
+
+          // Call Now Conversion
         } else if (url.includes("tel:")) {
           gtag("event", "conversion", {
             send_to: "AW-16976821320/-hRVCMra_bYaEMj4lp8_",
@@ -45,6 +53,7 @@
             event_callback: callback,
           });
         }
+
         return false;
       }
     </script>

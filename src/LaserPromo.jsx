@@ -4,6 +4,9 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import Face from "./img/face.jpg"; // Hero background image
 
+const searchParams = new URLSearchParams(window.location.search);
+const adVariant = searchParams.get("ad");
+
 const FadeSection = ({ children }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
@@ -35,6 +38,28 @@ const HeroSection = () => {
     heroControls.start({ opacity: 1, y: 0 });
   }, [heroControls]);
 
+  const getHeadline = () => {
+    switch (adVariant) {
+      case "face":
+        return "🌟 50% Off Face Laser Hair Removal 🌟";
+      case "general":
+        return "🌟 50% Off Laser Hair Removal Services 🌟";
+      default:
+        return "🌟 Face Laser Hair Removal – Only $79.99 🌟";
+    }
+  };
+
+  const getSubtext = () => {
+    switch (adVariant) {
+      case "face":
+        return "Get 50% off our gentle and effective face treatments. First-time clients only.";
+      case "general":
+        return "Smooth, safe, and lasting results — now 50% off for new clients.";
+      default:
+        return "(Reg. $150) Smooth, safe, and long-lasting results. First-time clients only.";
+    }
+  };
+
   return (
     <motion.section
       className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden"
@@ -47,14 +72,12 @@ const HeroSection = () => {
         style={{ backgroundImage: `url(${Face})` }}
       />
       <div className="absolute inset-0 bg-pink-100 bg-opacity-60 -z-10" />
-
       <div className="z-10 animate-fade-in">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 drop-shadow-lg">
-          🌟 Face Laser Hair Removal – Only $79.99 🌟
+          {getHeadline()}
         </h1>
         <p className="text-lg md:text-xl text-gray-700 mb-6 drop-shadow">
-          (Reg. $150) Smooth, safe, and long-lasting results. First-time clients
-          only.
+          {getSubtext()}
         </p>
         <a
           href="https://www.laserspot.ca/booking-calendar/free-consultation?referral=service_list_widget"
@@ -124,31 +147,13 @@ const Testimonials = () => (
       <h2 className="text-3xl font-bold text-gray-800 mb-12">
         What Our Clients Say
       </h2>
-      <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div className="bg-white shadow-md rounded-2xl p-6 text-left">
-          <h4 className="text-lg font-semibold text-gray-900">Elena S.</h4>
-          <div className="text-yellow-500 text-sm mb-2">★★★★★</div>
-          <p className="text-gray-700 italic">
-            After my first session with Shela there was a noticeable improvement
-            and the treatment was painless.
-          </p>
-        </div>
-        <div className="bg-white shadow-md rounded-2xl p-6 text-left">
-          <h4 className="text-lg font-semibold text-gray-900">Chioma O.</h4>
-          <div className="text-yellow-500 text-sm mb-2">★★★★★</div>
-          <p className="text-gray-700 italic">
-            All it took was 2 sessions and my facial hair thinned out
-            completely. Best place ever!
-          </p>
-        </div>
-        <div className="bg-white shadow-md rounded-2xl p-6 text-left">
-          <h4 className="text-lg font-semibold text-gray-900">Simran S.</h4>
-          <div className="text-yellow-500 text-sm mb-2">★★★★★</div>
-          <p className="text-gray-700 italic">
-            Laser Spot Brampton is the best! After five sessions my hair has
-            barely grown back!
-          </p>
-        </div>
+
+      {/* Elfsight Google Reviews */}
+      <div className="max-w-4xl mx-auto">
+        <div
+          className="elfsight-app-fef96e09-37fc-4b5d-bebf-caa44cf77e84"
+          data-elfsight-app-lazy
+        ></div>
       </div>
     </section>
 

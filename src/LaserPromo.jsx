@@ -142,13 +142,11 @@ const WhyChooseUs = () => (
 );
 
 const Testimonials = () => (
-  <FadeSection>
+  <>
     <section className="bg-pink-50 py-16 px-4 text-center">
       <h2 className="text-3xl font-bold text-gray-800 mb-12">
         What Our Clients Say
       </h2>
-
-      {/* Elfsight Google Reviews */}
       <div className="max-w-4xl mx-auto">
         <div
           className="elfsight-app-fef96e09-37fc-4b5d-bebf-caa44cf77e84"
@@ -195,7 +193,7 @@ const Testimonials = () => (
         </a>
       </div>
     </section>
-  </FadeSection>
+  </>
 );
 
 const ServiceExplanation = () => (
